@@ -6,23 +6,14 @@ import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 
 public class ModMaterialRules {
-    private static final MaterialRules.MaterialRule DIRT = makeStateRule(Blocks.DIRT);
-    private static final MaterialRules.MaterialRule GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-    private static final MaterialRules.MaterialRule IRON_BLOCK = makeStateRule(Blocks.IRON_BLOCK);
-    private static final MaterialRules.MaterialRule EMERALD_BLOCK = makeStateRule(Blocks.EMERALD_BLOCK);
+    private static final MaterialRules.MaterialRule STONE = makeStateRule(Blocks.STONE);
 
     public static MaterialRules.MaterialRule makeRules() {
-        MaterialRules.MaterialCondition isAtOrAboveWaterLevel = MaterialRules.water(-1, 0);
-
-        MaterialRules.MaterialRule grassSurface = MaterialRules.sequence(MaterialRules.condition(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
-
         return MaterialRules.sequence(
                 MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModBiomes.ASHEN_LAND),
-                                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, IRON_BLOCK)),
-                        MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, EMERALD_BLOCK)),
-
-                // Default to a grass and dirt surface
-                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, grassSurface)
+                                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, STONE)),
+                        MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING, STONE),
+                        MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH, STONE))
         );
     }
 

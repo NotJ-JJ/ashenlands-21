@@ -8,9 +8,9 @@
   },
   "downfall": 0.2,
   "effects": {
-    "fog_color": 2269670,
-    "foliage_color": 13763580,
-    "grass_color": 8324092,
+    "fog_color": 12829354,
+    "foliage_color": 10795426,
+    "grass_color": 10795426,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -21,11 +21,11 @@
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.overworld.dripstone_caves"
+      "sound": "minecraft:ambient.soul_sand_valley.loop"
     },
-    "sky_color": 3197208,
+    "sky_color": 12829354,
     "water_color": 10795426,
-    "water_fog_color": 12524326
+    "water_fog_color": 10795426
   },
   "features": [
     [],
@@ -38,17 +38,9 @@
     ],
     [
       "minecraft:monster_room",
-      "minecraft:monster_room_deep",
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep",
-      "minecraft:fossil_upper",
-      "minecraft:fossil_lower"
+      "minecraft:monster_room_deep"
     ],
-    [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface",
-      "minecraft:disk_gravel"
-    ],
+    [],
     [],
     [
       "minecraft:ore_dirt",
@@ -76,13 +68,9 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:ore_clay",
-      "minecraft:disk_clay"
+      "minecraft:underwater_magma"
     ],
     [
-      "minecraft:ore_ancient_debris_large",
-      "minecraft:ore_debris_small",
       "minecraft:ore_infested"
     ],
     [
@@ -90,13 +78,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen",
-      "minecraft:patch_dead_bush_2",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:patch_cactus_desert",
-      "minecraft:patch_grass_savanna"
+      "minecraft:glow_lichen"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -182,5 +164,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 2.0
+  "temperature": 1.2
 }

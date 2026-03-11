@@ -18,6 +18,7 @@ import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.MiscPlacedFeatures;
+import net.minecraft.world.gen.feature.UndergroundPlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 
 public class ModBiomes {
@@ -57,38 +58,37 @@ public class ModBiomes {
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
         globalOverworldGeneration(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
-        DefaultBiomeFeatures.addAncientDebris(biomeBuilder);
-        DefaultBiomeFeatures.addClayOre(biomeBuilder);
-        DefaultBiomeFeatures.addClayDisk(biomeBuilder);
-        DefaultBiomeFeatures.addDesertDeadBushes(biomeBuilder);
-        DefaultBiomeFeatures.addDungeons(biomeBuilder);
-        DefaultBiomeFeatures.addFossils(biomeBuilder);
-        DefaultBiomeFeatures.addInfestedStone(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
 
-        biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
-        biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_SURFACE);
-        biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.DISK_GRAVEL);
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.BROWN_MUSHROOM_NORMAL);
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_CACTUS_DESERT);
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
+        DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+        DefaultBiomeFeatures.addInfestedStone(biomeBuilder);
+        //DefaultBiomeFeatures.addClayDisk(biomeBuilder);
+        //DefaultBiomeFeatures.addClayOre(biomeBuilder);
+        //DefaultBiomeFeatures.addDesertDeadBushes(biomeBuilder);
+        //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
+        //DefaultBiomeFeatures.addFossils(biomeBuilder);
+        //DefaultBiomeFeatures.addAncientDebris(biomeBuilder);
+
+        //biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
+        //biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_SURFACE);
+        //biomeBuilder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, MiscPlacedFeatures.DISK_CLAY);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_CACTUS_DESERT);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
 
         return new Biome.Builder()
                 .precipitation(true)
                 .downfall(0.2f)
-                .temperature(2.0f)
+                .temperature(1.2f)
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
                 .effects((new BiomeEffects.Builder())
                         .waterColor(0xa4b9a2)
-                        .waterFogColor(0xbf1b26)
-                        .skyColor(0x30c918)
-                        .grassColor(0x7f03fc)
-                        .foliageColor(0xd203fc)
-                        .fogColor(0x22a1e6)
+                        .waterFogColor(0xa4b9a2)
+                        .skyColor(0xc3c2aa)
+                        .grassColor(0xa4b9a2)
+                        .foliageColor(0xa4b9a2)
+                        .fogColor(0xc3c2aa)
                         .moodSound(BiomeMoodSound.CAVE)
-                        .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DRIPSTONE_CAVES)).build())
+                        .music(MusicType.createIngameMusic(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_LOOP)).build())
                 .build();
     }
 }
