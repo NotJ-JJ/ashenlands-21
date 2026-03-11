@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "ashenlands",
+	"version": "${version}",
+	"name": "Ashen Lands",
+	"description": "gloop",
+	"authors": [
+		"AshleyTerra/NotJJ"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/NotJ-JJ/AshenLands-21"
+	},
+	"license": "MIT",
+	"icon": "assets/ashenlands/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"net.ashleyterra.ashenlands.AshenLandsClient"
+		],
+		"main": [
+			"net.ashleyterra.ashenlands.AshenLands"
+		],
+		"fabric-datagen": [
+			"net.ashleyterra.ashenlands.AshenLandsDataGenerator"
+		]
+	},
+	"mixins": [
+		"ashenlands.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
