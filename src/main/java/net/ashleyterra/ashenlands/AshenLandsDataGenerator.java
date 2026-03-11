@@ -1,5 +1,6 @@
 package net.ashleyterra.ashenlands;
 
+import net.ashleyterra.ashenlands.datagen.ModWorldGenerator;
 import net.ashleyterra.ashenlands.world.biome.ModBiomes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -9,7 +10,9 @@ import net.minecraft.registry.RegistryKeys;
 public class AshenLandsDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
+		pack.addProvider(ModWorldGenerator::new);
 	}
 
 	@Override
