@@ -16,10 +16,7 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.feature.MiscPlacedFeatures;
-import net.minecraft.world.gen.feature.UndergroundPlacedFeatures;
-import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.world.gen.feature.*;
 
 public class ModBiomes {
     public static final RegistryKey<Biome> ASHEN_LAND = RegistryKey.of(RegistryKeys.BIOME,
@@ -57,22 +54,23 @@ public class ModBiomes {
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
-        globalOverworldGeneration(biomeBuilder);
-
-        DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+        DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
         DefaultBiomeFeatures.addInfestedStone(biomeBuilder);
-        //DefaultBiomeFeatures.addClayDisk(biomeBuilder);
-        //DefaultBiomeFeatures.addClayOre(biomeBuilder);
-        //DefaultBiomeFeatures.addDesertDeadBushes(biomeBuilder);
-        //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        //DefaultBiomeFeatures.addFossils(biomeBuilder);
-        //DefaultBiomeFeatures.addAncientDebris(biomeBuilder);
+        DefaultBiomeFeatures.addClayOre(biomeBuilder);
+        DefaultBiomeFeatures.addDesertDeadBushes(biomeBuilder);
+        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
+        DefaultBiomeFeatures.addFossils(biomeBuilder);
+        DefaultBiomeFeatures.addAncientDebris(biomeBuilder);
 
-        //biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
-        //biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_SURFACE);
-        //biomeBuilder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, MiscPlacedFeatures.DISK_CLAY);
-        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_CACTUS_DESERT);
-        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
+        // More custom builer parts
+
+        biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
+        biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_SURFACE);
+        biomeBuilder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, MiscPlacedFeatures.DISK_CLAY);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_CACTUS_DESERT);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
+        biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OrePlacedFeatures.ORE_ANDESITE_UPPER);
+        biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OrePlacedFeatures.ORE_ANDESITE_LOWER);
 
         return new Biome.Builder()
                 .precipitation(true)
