@@ -54,23 +54,23 @@ public class ModBiomes {
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
-        DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
-        DefaultBiomeFeatures.addInfestedStone(biomeBuilder);
-        DefaultBiomeFeatures.addClayOre(biomeBuilder);
-        DefaultBiomeFeatures.addDesertDeadBushes(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        DefaultBiomeFeatures.addFossils(biomeBuilder);
-        DefaultBiomeFeatures.addAncientDebris(biomeBuilder);
+        //DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
+        //DefaultBiomeFeatures.addInfestedStone(biomeBuilder);
+        //DefaultBiomeFeatures.addClayOre(biomeBuilder);
+        //DefaultBiomeFeatures.addDesertDeadBushes(biomeBuilder);
+        //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
+        //DefaultBiomeFeatures.addFossils(biomeBuilder);
+        //DefaultBiomeFeatures.addAncientDebris(biomeBuilder);
 
         // More custom builer parts
 
-        biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
-        biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_SURFACE);
-        biomeBuilder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, MiscPlacedFeatures.DISK_CLAY);
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_CACTUS_DESERT);
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
-        biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OrePlacedFeatures.ORE_ANDESITE_UPPER);
-        biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OrePlacedFeatures.ORE_ANDESITE_LOWER);
+        //biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
+        //biomeBuilder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, MiscPlacedFeatures.LAKE_LAVA_SURFACE);
+        //biomeBuilder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, MiscPlacedFeatures.DISK_CLAY);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_CACTUS_DESERT);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
+        //biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OrePlacedFeatures.ORE_ANDESITE_UPPER);
+        //biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, OrePlacedFeatures.ORE_ANDESITE_LOWER);
 
         return new Biome.Builder()
                 .precipitation(true)
